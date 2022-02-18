@@ -1,0 +1,47 @@
+version: "3.3"
+services:
+
+  # PHP service
+  app:
+    build: .
+    container_name: php-app
+    working_dir: /var/www/html
+    restart: always
+    volumes:
+      - .:/var/www/html
+    networks:
+      - app-network
+
+  # MySQL database service
+    # MySQL database service
+  db:
+    image: mysql:5.7
+    container_name: mysql-db
+    ports:
+      - "6603:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: sof
+      MYSQL_DATABASE: stack_over_flow
+      MYSQL_USER: sof
+      MYSQL_PASSWORD: sof
+    env_file:
+      - ./.env.dev.local
+    #volumes:
+    #  - ./storage/dbdata:/var/lib/mysql
+    networks:
+      - app-network
+  # Nginx service
+  nginx:
+    image: nginx:alpine
+    container_name: php-nginx
+    ports:
+      - 8000:80
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
