@@ -32,7 +32,7 @@ docker-compose up --build
 
 
 <h3 align="center">  
-<a href="EXAMPLES.md">See examples of usage!!!!</a>  
+<a href="EXAMPLES.md">See examples of usage</a>  
 </h3>  
 
 <strong>  
