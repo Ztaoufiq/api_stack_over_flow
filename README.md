@@ -43,7 +43,7 @@ JWT_PASSPHRASE=d95efd5b83f19313c2c1565829e0ebbf
 ```
 
 <h3 align="center">  
-<a href="EXAMPLES.md">See examples of usage</a>  
+<a href="EXAMPLES.md">See examples of usage !!!!!</a>  
 </h3>  
 
 <strong>  
