@@ -28,6 +28,7 @@ security:
             security: false
     access_control:
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/questions/api_post, roles: PUBLIC_ACCESS }
         - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used

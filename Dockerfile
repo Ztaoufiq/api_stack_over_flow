@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y git
 
 # Install PHP extensions
 RUN docker-php-ext-install pdo pdo_mysql sockets
+
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
